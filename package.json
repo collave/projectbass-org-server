@@ -1,0 +1,44 @@
+{
+  "name": "advancepayday-server",
+  "version": "0.0.1",
+  "description": "API Server for Advance Payday Lending",
+  "type": "module",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "files": [
+    "build/src"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint",
+    "start": "ts-node --experimental-specifier-resolution=node ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^14.11.2",
+    "gts": "^3.1.1",
+    "typescript": "~4.7.0"
+  },
+  "dependencies": {
+    "big.js": "^6.2.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.7",
+    "dotenv": "^16.0.3",
+    "eventemitter3": "^5.0.0",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.5.0",
+    "lodash-es": "^4.17.21",
+    "mongoose": "^6.9.2",
+    "ts-node": "^10.9.1"
+  }
+}

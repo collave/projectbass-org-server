@@ -1,0 +1,22 @@
+{
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "types": ["@types/node"],
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["ESNext", "DOM"],
+    "rootDir": "./src",
+    "outDir": "build",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "baseUrl": "./src",
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src/**/*.ts"]
+}

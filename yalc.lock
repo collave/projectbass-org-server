@@ -1,0 +1,8 @@
+{
+  "version": "v1",
+  "packages": {
+    "@collave/suitcase-server": {
+      "signature": "0255f3b5ac6e0bde14b3aa05cd95b9c5"
+    }
+  }
+}
