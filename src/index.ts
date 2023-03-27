@@ -59,14 +59,18 @@ app.post('/results', (req, res) => {
     headers: req.headers,
   }
   result.payload = req.body
-  res.json({status: 'ok'})
+  result.save().then(() => {
+    res.json({status: 'ok'})
+  })
 })
 
 app.post('/ratings', (req, res) => {
-  const result = new Rating()
-  result.firebaseAuthID = res.locals.firebaseAuthID
-  result.value = req.body.value
-  res.json({status: 'ok'})
+  const rating = new Rating()
+  rating.firebaseAuthID = res.locals.firebaseAuthID
+  rating.value = req.body.value
+  rating.save().then(() => {
+    res.json({status: 'ok'})
+  })
 })
 
 server.listen(8080, () => {
