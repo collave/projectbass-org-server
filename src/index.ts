@@ -9,6 +9,15 @@ import {getApps, cert, initializeApp} from 'firebase-admin/app'
 import {getAuth} from 'firebase-admin/auth'
 import {Result} from './models/Result'
 import {Rating} from './models/Rating'
+import mongoose from 'mongoose'
+
+const readyState = mongoose.connections[0].readyState
+if (readyState !== 1 && readyState !== 2) {
+  mongoose
+    .connect(process.env.MONGODB_URL!)
+    .then(() => console.log('Connected to MongoDB!'))
+    .catch(error => console.error(error))
+}
 
 if (!getApps().length) {
   const googleCredentials = process.env.GOOGLE_CREDENTIALS
